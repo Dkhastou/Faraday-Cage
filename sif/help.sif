@@ -1,0 +1,92 @@
+Header
+    CHECK KEYWORDS Warn
+    Mesh DB "." "mesh"
+    ! Mesh DB "../mesh"
+    Results Directory "results"
+End
+
+! non string arguments can be given with or without caps. I.E. direct or Direct. There is no difference
+
+Simulation
+    Coordinate System = Cartesian
+    Simulation Type = Transient
+    Timestep Sizes = 0.01
+    Timestep Intervals = 10
+    ! Steady State Max Iterations = 1
+
+    Timestepping Method = implicit Euler
+    Post File = "case.vtu"
+End
+
+! The 'Name' keyword is for the user, and it can be set to anything. 
+! Elmer does not interpret this
+
+Equation 1
+    Name = "HeatEquation"
+    Active Solvers(1) = 1 
+    ! Heat Equation = True 
+End
+
+Solver 1
+    Equation = "HeatEquation"
+    ! The 'Equation' keyword is also just for the user and is not read by Elmer
+    ! similar to the name keyword
+    ! It is usually best to use the same name for the Name keyword in Equation 1
+    ! and the Equation keyword in Solver 1
+
+    ! Variable = Potential    ! This variable would be used for another kind of solver
+    ! Variable DOFS = 1
+    Variable = Temperature 
+
+    Procedure = "HeatSolve" "heatsolver"
+    ! first procedure argument should be a string that is an 
+    ! executable located in /usr/local/share/elmersolver/lib
+    ! The second procedure argument is a string argument that 
+    ! can be found with a command located in the .README 
+
+    ! OLD. PROBABLY USED FOR STEADY STATE
+    ! Linear System Solver = direct
+    ! Linear System Direct Method = UMFPACK
+
+    Linear System Solver = iterative
+    Linear System Iterative Method = 1
+    Linear System Max Iterations = 2
+    
+End
+
+! Look up material properties to use 
+
+Material 1
+    Name = "Steel"
+    Heat Conductivity = 500  ! W/mK
+    Density = 7850.0          ! kg/m^3
+    Heat Capacity = 470.0     ! I SHOULD KNOW THE UNITS FOR THIS
+End
+
+Body 1
+    Target Bodies(1) = 1
+    ! Target Bodies uses the physical groups volume defined in gmsh
+    Equation = 1
+    Material = 1
+    ! Initial Condition must be declared here
+    Initial Condition = 1
+End
+
+Initial Condition 1
+    Temperature = 200
+End
+
+Boundary Condition 1
+    Target Boundaries(1) = 2
+    Temperature = 373.15
+    ! Temperature = 200 * Time / 1.0  ! linearly ramp from 0 → 200 over 1 second
+    ! Key Word Potential instead of Temperature would be defined for other solver types 
+End
+
+! the (1) after Target Boundaries tells Elmer how many boundaries there are
+! for example, Target Boundaries(2) = 2 3 or TargetBoundaries(3) = 2 3 4
+
+Boundary Condition 2
+    Target Boundaries(1) = 3
+    Temperature = 100
+End

@@ -1,0 +1,11 @@
+Metadata for SaveScalars file: iteration-results/results.dat
+Elmer version: 9.0
+Elmer revision: 71f94d526
+Elmer compilation date: 2026-01-15
+Solver input file: ./sif/iteration-case.sif
+File started at: 2026/01/25 18:38:49
+ 
+Variables in columns of matrix: 
+   1: res: electric energy
+   2: res: potential difference
+   3: res: capacitance

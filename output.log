@@ -1,0 +1,1621 @@
+
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+BEGINNING OF RUN 1
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+ELMER SOLVER (v 9.0) STARTED AT: 2026/01/25 18:38:37
+ParCommInit: Initialize #PEs: 1
+MAIN: 
+MAIN: =============================================================
+MAIN: ElmerSolver finite element software, Welcome!
+MAIN: This program is free software licensed under (L)GPL
+MAIN: Copyright 1st April 1995 - , CSC - IT Center for Science Ltd.
+MAIN: Webpage http://www.csc.fi/elmer, Email elmeradm@csc.fi
+MAIN: Version: 9.0 (Rev: 71f94d526, Compiled: 2026-01-15)
+MAIN:  Running one task without MPI parallelization.
+MAIN:  Running with just one thread per task.
+MAIN: =============================================================
+MAIN: 
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Reading Model: ./sif/iteration-case.sif
+LoadInputFile: Scanning input file: ./sif/iteration-case.sif
+LoadInputFile: Scanning only size info
+LoadInputFile: First time visiting
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Loading input file: ./sif/iteration-case.sif
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Number of BCs: 2
+LoadInputFile: Number of Body Forces: 0
+LoadInputFile: Number of Initial Conditions: 0
+LoadInputFile: Number of Materials: 1
+LoadInputFile: Number of Equations: 1
+LoadInputFile: Number of Solvers: 2
+LoadInputFile: Number of Bodies: 1
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+LoadMesh: Loading serial mesh!
+ElmerAsciiMesh: Performing step: 1
+ElmerAsciiMesh: Base mesh name: ./mesh
+ReadHeaderFile: Reading header info from file: ./mesh/mesh.header
+InitializeMesh: Number of nodes in mesh: 7418
+InitializeMesh: Number of bulk elements in mesh: 37138
+InitializeMesh: Number of boundary elements in mesh: 1880
+InitializeMesh: Initial number of max element nodes: 4
+ElmerAsciiMesh: Performing step: 2
+ReadNodesFile: Reading nodes from file: ./mesh/mesh.nodes
+SetMeshDimension: Dimension of mesh is: 3
+SetMeshDimension: Max dimension of mesh is: 3
+ElmerAsciiMesh: Performing step: 3
+ReadElementsFile: Reading bulk elements from file: ./mesh/mesh.elements
+ElmerAsciiMesh: Performing step: 4
+ReadBoundaryFile: Reading boundary elements from file: ./mesh/mesh.boundary
+PermuteNodeNumbering: Performing node mapping
+MapBodiesAndBCs: Remapping bodies
+MapBodiesAndBCs: Minimum initial body index: 1
+MapBodiesAndBCs: Maximum initial body index: 1
+MapBodiesAndBCs: Remapping boundaries
+MapBodiesAndBCs: Minimum initial boundary index: 2
+MapBodiesAndBCs: Maximum initial boundary index: 3
+ElmerAsciiMesh: Performing step: 5
+ElmerAsciiMesh: Performing step: 6
+LoadMesh: Loading mesh done
+LoadMesh: Preparing mesh done
+LoadMesh: Elapsed REAL time:     0.0405 (s)
+MeshStabParams: Computing stabilization parameters
+MeshStabParams: Elapsed REAL time:     0.0034 (s)
+MAIN: -------------------------------------
+AddMeshCoordinates: Setting mesh coordinates and time
+AddSolvers: Setting up 2 solvers
+AddSolvers: Setting up solver 1: electrostatics
+AddEquationBasics: Using procedure: StatElecSolve StatElecSolver
+AddEquationBasics: Setting up solver: electrostatics
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver]
+AddEquationBasics: Creating standard variable: potential
+CheckLinearSolverOptions: Setting > Linear System Direct Method < to:umfpack
+OptimizeBandwidth: ---------------------------------------------------------
+OptimizeBandwidth: Computing matrix structure for: electrostatics
+OptimizeBandwidth: Initial bandwidth for electrostatics: 7359
+OptimizeBandwidth: Optimized bandwidth for electrostatics: 824
+OptimizeBandwidth: ---------------------------------------------------------
+AddSolvers: Setting up solver 2: savedata
+AddEquationBasics: Using procedure: SaveData SaveScalars
+AddEquationBasics: Setting up solver: savedata
+Loading user function library: [SaveData]...[SaveScalars_Init]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars]
+AddTimeEtc: Setting time and other global variables
+MAIN: Random seed initialized to: 314159265
+SetInitialConditions: Setting up initial conditions (if any)
+MAIN: Number of timesteps to be saved: 1
+MAIN: 
+MAIN: -------------------------------------
+MAIN:  Steady state iteration:            1
+MAIN: -------------------------------------
+MAIN: 
+SingleSolver: Attempting to call solver: 1
+SingleSolver: Solver Equation string is: electrostatics
+StatElecSolver: -------------------------------------
+StatElecSolver: Electrostatics solver:
+StatElecSolver: -------------------------------------
+DefaultStart: Starting solver: electrostatics
+StatElecSolver: Starting Assembly...
+DefUtils::DefaultDirichletBCs: Setting Dirichlet boundary conditions
+EnforceDirichletConditions: Enforcing total of 1022 Dirichlet conditions.
+EnforceDirichletConditions: Applying Dirichlet conditions using scaled diagonal
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+EnforceDirichletConditions: Dirichlet conditions enforced for dofs: 1022
+StatElecSolver:  Assembly (s)          :  0.18772000000000000
+DefaultSolve: Solving linear system with default routines
+SolveSystem: Solving linear system
+SolveLinearSystem: Assuming real valued linear system
+SolveLinearSystem: Assuming serial linear system
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+SolveLinearSystem: Serial linear System Solver: direct
+DirectSolver: Using direct method: umfpack
+ComputeNorm: Computing norm of solution
+ComputeChange: NS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+StatElecSolver:  Solve (s)             :  0.44529100000000005
+StatElecSolver:  Tot. Electric Energy  :   909999.99999999662
+StatElecSolver:  Potential difference:    100.00000000000000
+StatElecSolver:  Capacitance           :   181.99999999999932
+StatElecSolver:  Result Norm   :    59.120393425816395
+StatElecSolver:  Relative Change :    2.0000000000000000
+DefaultFinish: Finished solver: electrostatics
+ComputeNorm: Computing norm of solution
+ComputeChange: SS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+SingleSolver: Attempting to call solver: 2
+SingleSolver: Solver Equation string is: savedata
+SaveScalars: -----------------------------------------
+SaveScalars: Saving scalar values of various kinds
+SolverOutputDirectory: Creating directory: iteration-results
+SaveScalars: Performed 0 reduction operations
+SaveScalars: Found 3 result scalars in simulation section
+SaveScalars: Found 3 values to save in total
+SaveScalars: Saving names of values to file: iteration-results/results.dat.names
+SaveScalars: Data is appended to existing file
+SaveScalars: Saving values to file: iteration-results/results.dat
+SaveScalars: -----------------------------------------
+ReloadInputFile: Reloading input file
+LoadInputFile: Loading input file:
+MAIN: Reporting unused list entries for sif improvement!
+MAIN: If you do not want these lines undefine > DEVEL_LISTUSAGE < !
+   Unused keywords:
+MAIN: *** Elmer Solver: ALL DONE ***
+MAIN: The end
+SOLVER TOTAL TIME(CPU,REAL):         0.90        1.21
+ELMER SOLVER FINISHED AT: 2026/01/25 18:38:38
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+END OF RUN 1
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+BEGINNING OF RUN 2
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+ELMER SOLVER (v 9.0) STARTED AT: 2026/01/25 18:38:38
+ParCommInit: Initialize #PEs: 1
+MAIN: 
+MAIN: =============================================================
+MAIN: ElmerSolver finite element software, Welcome!
+MAIN: This program is free software licensed under (L)GPL
+MAIN: Copyright 1st April 1995 - , CSC - IT Center for Science Ltd.
+MAIN: Webpage http://www.csc.fi/elmer, Email elmeradm@csc.fi
+MAIN: Version: 9.0 (Rev: 71f94d526, Compiled: 2026-01-15)
+MAIN:  Running one task without MPI parallelization.
+MAIN:  Running with just one thread per task.
+MAIN: =============================================================
+MAIN: 
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Reading Model: ./sif/iteration-case.sif
+LoadInputFile: Scanning input file: ./sif/iteration-case.sif
+LoadInputFile: Scanning only size info
+LoadInputFile: First time visiting
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Loading input file: ./sif/iteration-case.sif
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Number of BCs: 2
+LoadInputFile: Number of Body Forces: 0
+LoadInputFile: Number of Initial Conditions: 0
+LoadInputFile: Number of Materials: 1
+LoadInputFile: Number of Equations: 1
+LoadInputFile: Number of Solvers: 2
+LoadInputFile: Number of Bodies: 1
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+LoadMesh: Loading serial mesh!
+ElmerAsciiMesh: Performing step: 1
+ElmerAsciiMesh: Base mesh name: ./mesh
+ReadHeaderFile: Reading header info from file: ./mesh/mesh.header
+InitializeMesh: Number of nodes in mesh: 7418
+InitializeMesh: Number of bulk elements in mesh: 37138
+InitializeMesh: Number of boundary elements in mesh: 1880
+InitializeMesh: Initial number of max element nodes: 4
+ElmerAsciiMesh: Performing step: 2
+ReadNodesFile: Reading nodes from file: ./mesh/mesh.nodes
+SetMeshDimension: Dimension of mesh is: 3
+SetMeshDimension: Max dimension of mesh is: 3
+ElmerAsciiMesh: Performing step: 3
+ReadElementsFile: Reading bulk elements from file: ./mesh/mesh.elements
+ElmerAsciiMesh: Performing step: 4
+ReadBoundaryFile: Reading boundary elements from file: ./mesh/mesh.boundary
+PermuteNodeNumbering: Performing node mapping
+MapBodiesAndBCs: Remapping bodies
+MapBodiesAndBCs: Minimum initial body index: 1
+MapBodiesAndBCs: Maximum initial body index: 1
+MapBodiesAndBCs: Remapping boundaries
+MapBodiesAndBCs: Minimum initial boundary index: 2
+MapBodiesAndBCs: Maximum initial boundary index: 3
+ElmerAsciiMesh: Performing step: 5
+ElmerAsciiMesh: Performing step: 6
+LoadMesh: Loading mesh done
+LoadMesh: Preparing mesh done
+LoadMesh: Elapsed REAL time:     0.0334 (s)
+MeshStabParams: Computing stabilization parameters
+MeshStabParams: Elapsed REAL time:     0.0036 (s)
+MAIN: -------------------------------------
+AddMeshCoordinates: Setting mesh coordinates and time
+AddSolvers: Setting up 2 solvers
+AddSolvers: Setting up solver 1: electrostatics
+AddEquationBasics: Using procedure: StatElecSolve StatElecSolver
+AddEquationBasics: Setting up solver: electrostatics
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver]
+AddEquationBasics: Creating standard variable: potential
+CheckLinearSolverOptions: Setting > Linear System Direct Method < to:umfpack
+OptimizeBandwidth: ---------------------------------------------------------
+OptimizeBandwidth: Computing matrix structure for: electrostatics
+OptimizeBandwidth: Initial bandwidth for electrostatics: 7359
+OptimizeBandwidth: Optimized bandwidth for electrostatics: 824
+OptimizeBandwidth: ---------------------------------------------------------
+AddSolvers: Setting up solver 2: savedata
+AddEquationBasics: Using procedure: SaveData SaveScalars
+AddEquationBasics: Setting up solver: savedata
+Loading user function library: [SaveData]...[SaveScalars_Init]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars]
+AddTimeEtc: Setting time and other global variables
+MAIN: Random seed initialized to: 314159265
+SetInitialConditions: Setting up initial conditions (if any)
+MAIN: Number of timesteps to be saved: 1
+MAIN: 
+MAIN: -------------------------------------
+MAIN:  Steady state iteration:            1
+MAIN: -------------------------------------
+MAIN: 
+SingleSolver: Attempting to call solver: 1
+SingleSolver: Solver Equation string is: electrostatics
+StatElecSolver: -------------------------------------
+StatElecSolver: Electrostatics solver:
+StatElecSolver: -------------------------------------
+DefaultStart: Starting solver: electrostatics
+StatElecSolver: Starting Assembly...
+DefUtils::DefaultDirichletBCs: Setting Dirichlet boundary conditions
+EnforceDirichletConditions: Enforcing total of 1022 Dirichlet conditions.
+EnforceDirichletConditions: Applying Dirichlet conditions using scaled diagonal
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+EnforceDirichletConditions: Dirichlet conditions enforced for dofs: 1022
+StatElecSolver:  Assembly (s)          :  0.18855700000000000
+DefaultSolve: Solving linear system with default routines
+SolveSystem: Solving linear system
+SolveLinearSystem: Assuming real valued linear system
+SolveLinearSystem: Assuming serial linear system
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+SolveLinearSystem: Serial linear System Solver: direct
+DirectSolver: Using direct method: umfpack
+ComputeNorm: Computing norm of solution
+ComputeChange: NS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+StatElecSolver:  Solve (s)             :  0.45681699999999997
+StatElecSolver:  Tot. Electric Energy  :   10000.000000000178
+StatElecSolver:  Potential difference:    100.00000000000000
+StatElecSolver:  Capacitance           :   2.0000000000000355
+StatElecSolver:  Result Norm   :    59.120393425816367
+StatElecSolver:  Relative Change :    2.0000000000000000
+DefaultFinish: Finished solver: electrostatics
+ComputeNorm: Computing norm of solution
+ComputeChange: SS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+SingleSolver: Attempting to call solver: 2
+SingleSolver: Solver Equation string is: savedata
+SaveScalars: -----------------------------------------
+SaveScalars: Saving scalar values of various kinds
+SolverOutputDirectory: Creating directory: iteration-results
+SaveScalars: Performed 0 reduction operations
+SaveScalars: Found 3 result scalars in simulation section
+SaveScalars: Found 3 values to save in total
+SaveScalars: Saving names of values to file: iteration-results/results.dat.names
+SaveScalars: Data is appended to existing file
+SaveScalars: Saving values to file: iteration-results/results.dat
+SaveScalars: -----------------------------------------
+ReloadInputFile: Reloading input file
+LoadInputFile: Loading input file:
+MAIN: Reporting unused list entries for sif improvement!
+MAIN: If you do not want these lines undefine > DEVEL_LISTUSAGE < !
+   Unused keywords:
+MAIN: *** Elmer Solver: ALL DONE ***
+MAIN: The end
+SOLVER TOTAL TIME(CPU,REAL):         0.94        1.20
+ELMER SOLVER FINISHED AT: 2026/01/25 18:38:39
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+END OF RUN 2
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+BEGINNING OF RUN 3
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+ELMER SOLVER (v 9.0) STARTED AT: 2026/01/25 18:38:39
+ParCommInit: Initialize #PEs: 1
+MAIN: 
+MAIN: =============================================================
+MAIN: ElmerSolver finite element software, Welcome!
+MAIN: This program is free software licensed under (L)GPL
+MAIN: Copyright 1st April 1995 - , CSC - IT Center for Science Ltd.
+MAIN: Webpage http://www.csc.fi/elmer, Email elmeradm@csc.fi
+MAIN: Version: 9.0 (Rev: 71f94d526, Compiled: 2026-01-15)
+MAIN:  Running one task without MPI parallelization.
+MAIN:  Running with just one thread per task.
+MAIN: =============================================================
+MAIN: 
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Reading Model: ./sif/iteration-case.sif
+LoadInputFile: Scanning input file: ./sif/iteration-case.sif
+LoadInputFile: Scanning only size info
+LoadInputFile: First time visiting
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Loading input file: ./sif/iteration-case.sif
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Number of BCs: 2
+LoadInputFile: Number of Body Forces: 0
+LoadInputFile: Number of Initial Conditions: 0
+LoadInputFile: Number of Materials: 1
+LoadInputFile: Number of Equations: 1
+LoadInputFile: Number of Solvers: 2
+LoadInputFile: Number of Bodies: 1
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+LoadMesh: Loading serial mesh!
+ElmerAsciiMesh: Performing step: 1
+ElmerAsciiMesh: Base mesh name: ./mesh
+ReadHeaderFile: Reading header info from file: ./mesh/mesh.header
+InitializeMesh: Number of nodes in mesh: 7418
+InitializeMesh: Number of bulk elements in mesh: 37138
+InitializeMesh: Number of boundary elements in mesh: 1880
+InitializeMesh: Initial number of max element nodes: 4
+ElmerAsciiMesh: Performing step: 2
+ReadNodesFile: Reading nodes from file: ./mesh/mesh.nodes
+SetMeshDimension: Dimension of mesh is: 3
+SetMeshDimension: Max dimension of mesh is: 3
+ElmerAsciiMesh: Performing step: 3
+ReadElementsFile: Reading bulk elements from file: ./mesh/mesh.elements
+ElmerAsciiMesh: Performing step: 4
+ReadBoundaryFile: Reading boundary elements from file: ./mesh/mesh.boundary
+PermuteNodeNumbering: Performing node mapping
+MapBodiesAndBCs: Remapping bodies
+MapBodiesAndBCs: Minimum initial body index: 1
+MapBodiesAndBCs: Maximum initial body index: 1
+MapBodiesAndBCs: Remapping boundaries
+MapBodiesAndBCs: Minimum initial boundary index: 2
+MapBodiesAndBCs: Maximum initial boundary index: 3
+ElmerAsciiMesh: Performing step: 5
+ElmerAsciiMesh: Performing step: 6
+LoadMesh: Loading mesh done
+LoadMesh: Preparing mesh done
+LoadMesh: Elapsed REAL time:     0.0347 (s)
+MeshStabParams: Computing stabilization parameters
+MeshStabParams: Elapsed REAL time:     0.0039 (s)
+MAIN: -------------------------------------
+AddMeshCoordinates: Setting mesh coordinates and time
+AddSolvers: Setting up 2 solvers
+AddSolvers: Setting up solver 1: electrostatics
+AddEquationBasics: Using procedure: StatElecSolve StatElecSolver
+AddEquationBasics: Setting up solver: electrostatics
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver]
+AddEquationBasics: Creating standard variable: potential
+CheckLinearSolverOptions: Setting > Linear System Direct Method < to:umfpack
+OptimizeBandwidth: ---------------------------------------------------------
+OptimizeBandwidth: Computing matrix structure for: electrostatics
+OptimizeBandwidth: Initial bandwidth for electrostatics: 7359
+OptimizeBandwidth: Optimized bandwidth for electrostatics: 824
+OptimizeBandwidth: ---------------------------------------------------------
+AddSolvers: Setting up solver 2: savedata
+AddEquationBasics: Using procedure: SaveData SaveScalars
+AddEquationBasics: Setting up solver: savedata
+Loading user function library: [SaveData]...[SaveScalars_Init]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars]
+AddTimeEtc: Setting time and other global variables
+MAIN: Random seed initialized to: 314159265
+SetInitialConditions: Setting up initial conditions (if any)
+MAIN: Number of timesteps to be saved: 1
+MAIN: 
+MAIN: -------------------------------------
+MAIN:  Steady state iteration:            1
+MAIN: -------------------------------------
+MAIN: 
+SingleSolver: Attempting to call solver: 1
+SingleSolver: Solver Equation string is: electrostatics
+StatElecSolver: -------------------------------------
+StatElecSolver: Electrostatics solver:
+StatElecSolver: -------------------------------------
+DefaultStart: Starting solver: electrostatics
+StatElecSolver: Starting Assembly...
+DefUtils::DefaultDirichletBCs: Setting Dirichlet boundary conditions
+EnforceDirichletConditions: Enforcing total of 1022 Dirichlet conditions.
+EnforceDirichletConditions: Applying Dirichlet conditions using scaled diagonal
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+EnforceDirichletConditions: Dirichlet conditions enforced for dofs: 1022
+StatElecSolver:  Assembly (s)          :  0.19860899999999998
+DefaultSolve: Solving linear system with default routines
+SolveSystem: Solving linear system
+SolveLinearSystem: Assuming real valued linear system
+SolveLinearSystem: Assuming serial linear system
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+SolveLinearSystem: Serial linear System Solver: direct
+DirectSolver: Using direct method: umfpack
+ComputeNorm: Computing norm of solution
+ComputeChange: NS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+StatElecSolver:  Solve (s)             :  0.51609200000000000
+StatElecSolver:  Tot. Electric Energy  :   110000.00000000506
+StatElecSolver:  Potential difference:    100.00000000000000
+StatElecSolver:  Capacitance           :   22.000000000001013
+StatElecSolver:  Result Norm   :    59.120393425816488
+StatElecSolver:  Relative Change :    2.0000000000000000
+DefaultFinish: Finished solver: electrostatics
+ComputeNorm: Computing norm of solution
+ComputeChange: SS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+SingleSolver: Attempting to call solver: 2
+SingleSolver: Solver Equation string is: savedata
+SaveScalars: -----------------------------------------
+SaveScalars: Saving scalar values of various kinds
+SolverOutputDirectory: Creating directory: iteration-results
+SaveScalars: Performed 0 reduction operations
+SaveScalars: Found 3 result scalars in simulation section
+SaveScalars: Found 3 values to save in total
+SaveScalars: Saving names of values to file: iteration-results/results.dat.names
+SaveScalars: Data is appended to existing file
+SaveScalars: Saving values to file: iteration-results/results.dat
+SaveScalars: -----------------------------------------
+ReloadInputFile: Reloading input file
+LoadInputFile: Loading input file:
+MAIN: Reporting unused list entries for sif improvement!
+MAIN: If you do not want these lines undefine > DEVEL_LISTUSAGE < !
+   Unused keywords:
+MAIN: *** Elmer Solver: ALL DONE ***
+MAIN: The end
+SOLVER TOTAL TIME(CPU,REAL):         1.08        1.31
+ELMER SOLVER FINISHED AT: 2026/01/25 18:38:41
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+END OF RUN 3
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+BEGINNING OF RUN 4
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+ELMER SOLVER (v 9.0) STARTED AT: 2026/01/25 18:38:41
+ParCommInit: Initialize #PEs: 1
+MAIN: 
+MAIN: =============================================================
+MAIN: ElmerSolver finite element software, Welcome!
+MAIN: This program is free software licensed under (L)GPL
+MAIN: Copyright 1st April 1995 - , CSC - IT Center for Science Ltd.
+MAIN: Webpage http://www.csc.fi/elmer, Email elmeradm@csc.fi
+MAIN: Version: 9.0 (Rev: 71f94d526, Compiled: 2026-01-15)
+MAIN:  Running one task without MPI parallelization.
+MAIN:  Running with just one thread per task.
+MAIN: =============================================================
+MAIN: 
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Reading Model: ./sif/iteration-case.sif
+LoadInputFile: Scanning input file: ./sif/iteration-case.sif
+LoadInputFile: Scanning only size info
+LoadInputFile: First time visiting
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Loading input file: ./sif/iteration-case.sif
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Number of BCs: 2
+LoadInputFile: Number of Body Forces: 0
+LoadInputFile: Number of Initial Conditions: 0
+LoadInputFile: Number of Materials: 1
+LoadInputFile: Number of Equations: 1
+LoadInputFile: Number of Solvers: 2
+LoadInputFile: Number of Bodies: 1
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+LoadMesh: Loading serial mesh!
+ElmerAsciiMesh: Performing step: 1
+ElmerAsciiMesh: Base mesh name: ./mesh
+ReadHeaderFile: Reading header info from file: ./mesh/mesh.header
+InitializeMesh: Number of nodes in mesh: 7418
+InitializeMesh: Number of bulk elements in mesh: 37138
+InitializeMesh: Number of boundary elements in mesh: 1880
+InitializeMesh: Initial number of max element nodes: 4
+ElmerAsciiMesh: Performing step: 2
+ReadNodesFile: Reading nodes from file: ./mesh/mesh.nodes
+SetMeshDimension: Dimension of mesh is: 3
+SetMeshDimension: Max dimension of mesh is: 3
+ElmerAsciiMesh: Performing step: 3
+ReadElementsFile: Reading bulk elements from file: ./mesh/mesh.elements
+ElmerAsciiMesh: Performing step: 4
+ReadBoundaryFile: Reading boundary elements from file: ./mesh/mesh.boundary
+PermuteNodeNumbering: Performing node mapping
+MapBodiesAndBCs: Remapping bodies
+MapBodiesAndBCs: Minimum initial body index: 1
+MapBodiesAndBCs: Maximum initial body index: 1
+MapBodiesAndBCs: Remapping boundaries
+MapBodiesAndBCs: Minimum initial boundary index: 2
+MapBodiesAndBCs: Maximum initial boundary index: 3
+ElmerAsciiMesh: Performing step: 5
+ElmerAsciiMesh: Performing step: 6
+LoadMesh: Loading mesh done
+LoadMesh: Preparing mesh done
+LoadMesh: Elapsed REAL time:     0.0443 (s)
+MeshStabParams: Computing stabilization parameters
+MeshStabParams: Elapsed REAL time:     0.0059 (s)
+MAIN: -------------------------------------
+AddMeshCoordinates: Setting mesh coordinates and time
+AddSolvers: Setting up 2 solvers
+AddSolvers: Setting up solver 1: electrostatics
+AddEquationBasics: Using procedure: StatElecSolve StatElecSolver
+AddEquationBasics: Setting up solver: electrostatics
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver]
+AddEquationBasics: Creating standard variable: potential
+CheckLinearSolverOptions: Setting > Linear System Direct Method < to:umfpack
+OptimizeBandwidth: ---------------------------------------------------------
+OptimizeBandwidth: Computing matrix structure for: electrostatics
+OptimizeBandwidth: Initial bandwidth for electrostatics: 7359
+OptimizeBandwidth: Optimized bandwidth for electrostatics: 824
+OptimizeBandwidth: ---------------------------------------------------------
+AddSolvers: Setting up solver 2: savedata
+AddEquationBasics: Using procedure: SaveData SaveScalars
+AddEquationBasics: Setting up solver: savedata
+Loading user function library: [SaveData]...[SaveScalars_Init]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars]
+AddTimeEtc: Setting time and other global variables
+MAIN: Random seed initialized to: 314159265
+SetInitialConditions: Setting up initial conditions (if any)
+MAIN: Number of timesteps to be saved: 1
+MAIN: 
+MAIN: -------------------------------------
+MAIN:  Steady state iteration:            1
+MAIN: -------------------------------------
+MAIN: 
+SingleSolver: Attempting to call solver: 1
+SingleSolver: Solver Equation string is: electrostatics
+StatElecSolver: -------------------------------------
+StatElecSolver: Electrostatics solver:
+StatElecSolver: -------------------------------------
+DefaultStart: Starting solver: electrostatics
+StatElecSolver: Starting Assembly...
+DefUtils::DefaultDirichletBCs: Setting Dirichlet boundary conditions
+EnforceDirichletConditions: Enforcing total of 1022 Dirichlet conditions.
+EnforceDirichletConditions: Applying Dirichlet conditions using scaled diagonal
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+EnforceDirichletConditions: Dirichlet conditions enforced for dofs: 1022
+StatElecSolver:  Assembly (s)          :  0.22504600000000002
+DefaultSolve: Solving linear system with default routines
+SolveSystem: Solving linear system
+SolveLinearSystem: Assuming real valued linear system
+SolveLinearSystem: Assuming serial linear system
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+SolveLinearSystem: Serial linear System Solver: direct
+DirectSolver: Using direct method: umfpack
+ComputeNorm: Computing norm of solution
+ComputeChange: NS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+StatElecSolver:  Solve (s)             :  0.53302600000000011
+StatElecSolver:  Tot. Electric Energy  :   209999.99999999872
+StatElecSolver:  Potential difference:    100.00000000000000
+StatElecSolver:  Capacitance           :   41.999999999999744
+StatElecSolver:  Result Norm   :    59.120393425816516
+StatElecSolver:  Relative Change :    2.0000000000000000
+DefaultFinish: Finished solver: electrostatics
+ComputeNorm: Computing norm of solution
+ComputeChange: SS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+SingleSolver: Attempting to call solver: 2
+SingleSolver: Solver Equation string is: savedata
+SaveScalars: -----------------------------------------
+SaveScalars: Saving scalar values of various kinds
+SolverOutputDirectory: Creating directory: iteration-results
+SaveScalars: Performed 0 reduction operations
+SaveScalars: Found 3 result scalars in simulation section
+SaveScalars: Found 3 values to save in total
+SaveScalars: Saving names of values to file: iteration-results/results.dat.names
+SaveScalars: Data is appended to existing file
+SaveScalars: Saving values to file: iteration-results/results.dat
+SaveScalars: -----------------------------------------
+ReloadInputFile: Reloading input file
+LoadInputFile: Loading input file:
+MAIN: Reporting unused list entries for sif improvement!
+MAIN: If you do not want these lines undefine > DEVEL_LISTUSAGE < !
+   Unused keywords:
+MAIN: *** Elmer Solver: ALL DONE ***
+MAIN: The end
+SOLVER TOTAL TIME(CPU,REAL):         1.17        1.39
+ELMER SOLVER FINISHED AT: 2026/01/25 18:38:42
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+END OF RUN 4
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+BEGINNING OF RUN 5
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+ELMER SOLVER (v 9.0) STARTED AT: 2026/01/25 18:38:42
+ParCommInit: Initialize #PEs: 1
+MAIN: 
+MAIN: =============================================================
+MAIN: ElmerSolver finite element software, Welcome!
+MAIN: This program is free software licensed under (L)GPL
+MAIN: Copyright 1st April 1995 - , CSC - IT Center for Science Ltd.
+MAIN: Webpage http://www.csc.fi/elmer, Email elmeradm@csc.fi
+MAIN: Version: 9.0 (Rev: 71f94d526, Compiled: 2026-01-15)
+MAIN:  Running one task without MPI parallelization.
+MAIN:  Running with just one thread per task.
+MAIN: =============================================================
+MAIN: 
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Reading Model: ./sif/iteration-case.sif
+LoadInputFile: Scanning input file: ./sif/iteration-case.sif
+LoadInputFile: Scanning only size info
+LoadInputFile: First time visiting
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Loading input file: ./sif/iteration-case.sif
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Number of BCs: 2
+LoadInputFile: Number of Body Forces: 0
+LoadInputFile: Number of Initial Conditions: 0
+LoadInputFile: Number of Materials: 1
+LoadInputFile: Number of Equations: 1
+LoadInputFile: Number of Solvers: 2
+LoadInputFile: Number of Bodies: 1
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+LoadMesh: Loading serial mesh!
+ElmerAsciiMesh: Performing step: 1
+ElmerAsciiMesh: Base mesh name: ./mesh
+ReadHeaderFile: Reading header info from file: ./mesh/mesh.header
+InitializeMesh: Number of nodes in mesh: 7418
+InitializeMesh: Number of bulk elements in mesh: 37138
+InitializeMesh: Number of boundary elements in mesh: 1880
+InitializeMesh: Initial number of max element nodes: 4
+ElmerAsciiMesh: Performing step: 2
+ReadNodesFile: Reading nodes from file: ./mesh/mesh.nodes
+SetMeshDimension: Dimension of mesh is: 3
+SetMeshDimension: Max dimension of mesh is: 3
+ElmerAsciiMesh: Performing step: 3
+ReadElementsFile: Reading bulk elements from file: ./mesh/mesh.elements
+ElmerAsciiMesh: Performing step: 4
+ReadBoundaryFile: Reading boundary elements from file: ./mesh/mesh.boundary
+PermuteNodeNumbering: Performing node mapping
+MapBodiesAndBCs: Remapping bodies
+MapBodiesAndBCs: Minimum initial body index: 1
+MapBodiesAndBCs: Maximum initial body index: 1
+MapBodiesAndBCs: Remapping boundaries
+MapBodiesAndBCs: Minimum initial boundary index: 2
+MapBodiesAndBCs: Maximum initial boundary index: 3
+ElmerAsciiMesh: Performing step: 5
+ElmerAsciiMesh: Performing step: 6
+LoadMesh: Loading mesh done
+LoadMesh: Preparing mesh done
+LoadMesh: Elapsed REAL time:     0.0372 (s)
+MeshStabParams: Computing stabilization parameters
+MeshStabParams: Elapsed REAL time:     0.0038 (s)
+MAIN: -------------------------------------
+AddMeshCoordinates: Setting mesh coordinates and time
+AddSolvers: Setting up 2 solvers
+AddSolvers: Setting up solver 1: electrostatics
+AddEquationBasics: Using procedure: StatElecSolve StatElecSolver
+AddEquationBasics: Setting up solver: electrostatics
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver]
+AddEquationBasics: Creating standard variable: potential
+CheckLinearSolverOptions: Setting > Linear System Direct Method < to:umfpack
+OptimizeBandwidth: ---------------------------------------------------------
+OptimizeBandwidth: Computing matrix structure for: electrostatics
+OptimizeBandwidth: Initial bandwidth for electrostatics: 7359
+OptimizeBandwidth: Optimized bandwidth for electrostatics: 824
+OptimizeBandwidth: ---------------------------------------------------------
+AddSolvers: Setting up solver 2: savedata
+AddEquationBasics: Using procedure: SaveData SaveScalars
+AddEquationBasics: Setting up solver: savedata
+Loading user function library: [SaveData]...[SaveScalars_Init]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars]
+AddTimeEtc: Setting time and other global variables
+MAIN: Random seed initialized to: 314159265
+SetInitialConditions: Setting up initial conditions (if any)
+MAIN: Number of timesteps to be saved: 1
+MAIN: 
+MAIN: -------------------------------------
+MAIN:  Steady state iteration:            1
+MAIN: -------------------------------------
+MAIN: 
+SingleSolver: Attempting to call solver: 1
+SingleSolver: Solver Equation string is: electrostatics
+StatElecSolver: -------------------------------------
+StatElecSolver: Electrostatics solver:
+StatElecSolver: -------------------------------------
+DefaultStart: Starting solver: electrostatics
+StatElecSolver: Starting Assembly...
+DefUtils::DefaultDirichletBCs: Setting Dirichlet boundary conditions
+EnforceDirichletConditions: Enforcing total of 1022 Dirichlet conditions.
+EnforceDirichletConditions: Applying Dirichlet conditions using scaled diagonal
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+EnforceDirichletConditions: Dirichlet conditions enforced for dofs: 1022
+StatElecSolver:  Assembly (s)          :  0.19279699999999997
+DefaultSolve: Solving linear system with default routines
+SolveSystem: Solving linear system
+SolveLinearSystem: Assuming real valued linear system
+SolveLinearSystem: Assuming serial linear system
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+SolveLinearSystem: Serial linear System Solver: direct
+DirectSolver: Using direct method: umfpack
+ComputeNorm: Computing norm of solution
+ComputeChange: NS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+StatElecSolver:  Solve (s)             :  0.43113699999999999
+StatElecSolver:  Tot. Electric Energy  :   309999.99999999878
+StatElecSolver:  Potential difference:    100.00000000000000
+StatElecSolver:  Capacitance           :   61.999999999999758
+StatElecSolver:  Result Norm   :    59.120393425816438
+StatElecSolver:  Relative Change :    2.0000000000000000
+DefaultFinish: Finished solver: electrostatics
+ComputeNorm: Computing norm of solution
+ComputeChange: SS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+SingleSolver: Attempting to call solver: 2
+SingleSolver: Solver Equation string is: savedata
+SaveScalars: -----------------------------------------
+SaveScalars: Saving scalar values of various kinds
+SolverOutputDirectory: Creating directory: iteration-results
+SaveScalars: Performed 0 reduction operations
+SaveScalars: Found 3 result scalars in simulation section
+SaveScalars: Found 3 values to save in total
+SaveScalars: Saving names of values to file: iteration-results/results.dat.names
+SaveScalars: Data is appended to existing file
+SaveScalars: Saving values to file: iteration-results/results.dat
+SaveScalars: -----------------------------------------
+ReloadInputFile: Reloading input file
+LoadInputFile: Loading input file:
+MAIN: Reporting unused list entries for sif improvement!
+MAIN: If you do not want these lines undefine > DEVEL_LISTUSAGE < !
+   Unused keywords:
+MAIN: *** Elmer Solver: ALL DONE ***
+MAIN: The end
+SOLVER TOTAL TIME(CPU,REAL):         0.94        1.19
+ELMER SOLVER FINISHED AT: 2026/01/25 18:38:43
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+END OF RUN 5
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+BEGINNING OF RUN 6
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+ELMER SOLVER (v 9.0) STARTED AT: 2026/01/25 18:38:43
+ParCommInit: Initialize #PEs: 1
+MAIN: 
+MAIN: =============================================================
+MAIN: ElmerSolver finite element software, Welcome!
+MAIN: This program is free software licensed under (L)GPL
+MAIN: Copyright 1st April 1995 - , CSC - IT Center for Science Ltd.
+MAIN: Webpage http://www.csc.fi/elmer, Email elmeradm@csc.fi
+MAIN: Version: 9.0 (Rev: 71f94d526, Compiled: 2026-01-15)
+MAIN:  Running one task without MPI parallelization.
+MAIN:  Running with just one thread per task.
+MAIN: =============================================================
+MAIN: 
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Reading Model: ./sif/iteration-case.sif
+LoadInputFile: Scanning input file: ./sif/iteration-case.sif
+LoadInputFile: Scanning only size info
+LoadInputFile: First time visiting
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Loading input file: ./sif/iteration-case.sif
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Number of BCs: 2
+LoadInputFile: Number of Body Forces: 0
+LoadInputFile: Number of Initial Conditions: 0
+LoadInputFile: Number of Materials: 1
+LoadInputFile: Number of Equations: 1
+LoadInputFile: Number of Solvers: 2
+LoadInputFile: Number of Bodies: 1
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+LoadMesh: Loading serial mesh!
+ElmerAsciiMesh: Performing step: 1
+ElmerAsciiMesh: Base mesh name: ./mesh
+ReadHeaderFile: Reading header info from file: ./mesh/mesh.header
+InitializeMesh: Number of nodes in mesh: 7418
+InitializeMesh: Number of bulk elements in mesh: 37138
+InitializeMesh: Number of boundary elements in mesh: 1880
+InitializeMesh: Initial number of max element nodes: 4
+ElmerAsciiMesh: Performing step: 2
+ReadNodesFile: Reading nodes from file: ./mesh/mesh.nodes
+SetMeshDimension: Dimension of mesh is: 3
+SetMeshDimension: Max dimension of mesh is: 3
+ElmerAsciiMesh: Performing step: 3
+ReadElementsFile: Reading bulk elements from file: ./mesh/mesh.elements
+ElmerAsciiMesh: Performing step: 4
+ReadBoundaryFile: Reading boundary elements from file: ./mesh/mesh.boundary
+PermuteNodeNumbering: Performing node mapping
+MapBodiesAndBCs: Remapping bodies
+MapBodiesAndBCs: Minimum initial body index: 1
+MapBodiesAndBCs: Maximum initial body index: 1
+MapBodiesAndBCs: Remapping boundaries
+MapBodiesAndBCs: Minimum initial boundary index: 2
+MapBodiesAndBCs: Maximum initial boundary index: 3
+ElmerAsciiMesh: Performing step: 5
+ElmerAsciiMesh: Performing step: 6
+LoadMesh: Loading mesh done
+LoadMesh: Preparing mesh done
+LoadMesh: Elapsed REAL time:     0.0346 (s)
+MeshStabParams: Computing stabilization parameters
+MeshStabParams: Elapsed REAL time:     0.0046 (s)
+MAIN: -------------------------------------
+AddMeshCoordinates: Setting mesh coordinates and time
+AddSolvers: Setting up 2 solvers
+AddSolvers: Setting up solver 1: electrostatics
+AddEquationBasics: Using procedure: StatElecSolve StatElecSolver
+AddEquationBasics: Setting up solver: electrostatics
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver]
+AddEquationBasics: Creating standard variable: potential
+CheckLinearSolverOptions: Setting > Linear System Direct Method < to:umfpack
+OptimizeBandwidth: ---------------------------------------------------------
+OptimizeBandwidth: Computing matrix structure for: electrostatics
+OptimizeBandwidth: Initial bandwidth for electrostatics: 7359
+OptimizeBandwidth: Optimized bandwidth for electrostatics: 824
+OptimizeBandwidth: ---------------------------------------------------------
+AddSolvers: Setting up solver 2: savedata
+AddEquationBasics: Using procedure: SaveData SaveScalars
+AddEquationBasics: Setting up solver: savedata
+Loading user function library: [SaveData]...[SaveScalars_Init]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars]
+AddTimeEtc: Setting time and other global variables
+MAIN: Random seed initialized to: 314159265
+SetInitialConditions: Setting up initial conditions (if any)
+MAIN: Number of timesteps to be saved: 1
+MAIN: 
+MAIN: -------------------------------------
+MAIN:  Steady state iteration:            1
+MAIN: -------------------------------------
+MAIN: 
+SingleSolver: Attempting to call solver: 1
+SingleSolver: Solver Equation string is: electrostatics
+StatElecSolver: -------------------------------------
+StatElecSolver: Electrostatics solver:
+StatElecSolver: -------------------------------------
+DefaultStart: Starting solver: electrostatics
+StatElecSolver: Starting Assembly...
+DefUtils::DefaultDirichletBCs: Setting Dirichlet boundary conditions
+EnforceDirichletConditions: Enforcing total of 1022 Dirichlet conditions.
+EnforceDirichletConditions: Applying Dirichlet conditions using scaled diagonal
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+EnforceDirichletConditions: Dirichlet conditions enforced for dofs: 1022
+StatElecSolver:  Assembly (s)          :  0.18297999999999998
+DefaultSolve: Solving linear system with default routines
+SolveSystem: Solving linear system
+SolveLinearSystem: Assuming real valued linear system
+SolveLinearSystem: Assuming serial linear system
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+SolveLinearSystem: Serial linear System Solver: direct
+DirectSolver: Using direct method: umfpack
+ComputeNorm: Computing norm of solution
+ComputeChange: NS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+StatElecSolver:  Solve (s)             :  0.44717099999999999
+StatElecSolver:  Tot. Electric Energy  :   409999.99999999825
+StatElecSolver:  Potential difference:    100.00000000000000
+StatElecSolver:  Capacitance           :   81.999999999999645
+StatElecSolver:  Result Norm   :    59.120393425816346
+StatElecSolver:  Relative Change :    2.0000000000000000
+DefaultFinish: Finished solver: electrostatics
+ComputeNorm: Computing norm of solution
+ComputeChange: SS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+SingleSolver: Attempting to call solver: 2
+SingleSolver: Solver Equation string is: savedata
+SaveScalars: -----------------------------------------
+SaveScalars: Saving scalar values of various kinds
+SolverOutputDirectory: Creating directory: iteration-results
+SaveScalars: Performed 0 reduction operations
+SaveScalars: Found 3 result scalars in simulation section
+SaveScalars: Found 3 values to save in total
+SaveScalars: Saving names of values to file: iteration-results/results.dat.names
+SaveScalars: Data is appended to existing file
+SaveScalars: Saving values to file: iteration-results/results.dat
+SaveScalars: -----------------------------------------
+ReloadInputFile: Reloading input file
+LoadInputFile: Loading input file:
+MAIN: Reporting unused list entries for sif improvement!
+MAIN: If you do not want these lines undefine > DEVEL_LISTUSAGE < !
+   Unused keywords:
+MAIN: *** Elmer Solver: ALL DONE ***
+MAIN: The end
+SOLVER TOTAL TIME(CPU,REAL):         0.91        1.17
+ELMER SOLVER FINISHED AT: 2026/01/25 18:38:45
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+END OF RUN 6
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+BEGINNING OF RUN 7
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+ELMER SOLVER (v 9.0) STARTED AT: 2026/01/25 18:38:45
+ParCommInit: Initialize #PEs: 1
+MAIN: 
+MAIN: =============================================================
+MAIN: ElmerSolver finite element software, Welcome!
+MAIN: This program is free software licensed under (L)GPL
+MAIN: Copyright 1st April 1995 - , CSC - IT Center for Science Ltd.
+MAIN: Webpage http://www.csc.fi/elmer, Email elmeradm@csc.fi
+MAIN: Version: 9.0 (Rev: 71f94d526, Compiled: 2026-01-15)
+MAIN:  Running one task without MPI parallelization.
+MAIN:  Running with just one thread per task.
+MAIN: =============================================================
+MAIN: 
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Reading Model: ./sif/iteration-case.sif
+LoadInputFile: Scanning input file: ./sif/iteration-case.sif
+LoadInputFile: Scanning only size info
+LoadInputFile: First time visiting
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Loading input file: ./sif/iteration-case.sif
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Number of BCs: 2
+LoadInputFile: Number of Body Forces: 0
+LoadInputFile: Number of Initial Conditions: 0
+LoadInputFile: Number of Materials: 1
+LoadInputFile: Number of Equations: 1
+LoadInputFile: Number of Solvers: 2
+LoadInputFile: Number of Bodies: 1
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+LoadMesh: Loading serial mesh!
+ElmerAsciiMesh: Performing step: 1
+ElmerAsciiMesh: Base mesh name: ./mesh
+ReadHeaderFile: Reading header info from file: ./mesh/mesh.header
+InitializeMesh: Number of nodes in mesh: 7418
+InitializeMesh: Number of bulk elements in mesh: 37138
+InitializeMesh: Number of boundary elements in mesh: 1880
+InitializeMesh: Initial number of max element nodes: 4
+ElmerAsciiMesh: Performing step: 2
+ReadNodesFile: Reading nodes from file: ./mesh/mesh.nodes
+SetMeshDimension: Dimension of mesh is: 3
+SetMeshDimension: Max dimension of mesh is: 3
+ElmerAsciiMesh: Performing step: 3
+ReadElementsFile: Reading bulk elements from file: ./mesh/mesh.elements
+ElmerAsciiMesh: Performing step: 4
+ReadBoundaryFile: Reading boundary elements from file: ./mesh/mesh.boundary
+PermuteNodeNumbering: Performing node mapping
+MapBodiesAndBCs: Remapping bodies
+MapBodiesAndBCs: Minimum initial body index: 1
+MapBodiesAndBCs: Maximum initial body index: 1
+MapBodiesAndBCs: Remapping boundaries
+MapBodiesAndBCs: Minimum initial boundary index: 2
+MapBodiesAndBCs: Maximum initial boundary index: 3
+ElmerAsciiMesh: Performing step: 5
+ElmerAsciiMesh: Performing step: 6
+LoadMesh: Loading mesh done
+LoadMesh: Preparing mesh done
+LoadMesh: Elapsed REAL time:     0.0343 (s)
+MeshStabParams: Computing stabilization parameters
+MeshStabParams: Elapsed REAL time:     0.0041 (s)
+MAIN: -------------------------------------
+AddMeshCoordinates: Setting mesh coordinates and time
+AddSolvers: Setting up 2 solvers
+AddSolvers: Setting up solver 1: electrostatics
+AddEquationBasics: Using procedure: StatElecSolve StatElecSolver
+AddEquationBasics: Setting up solver: electrostatics
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver]
+AddEquationBasics: Creating standard variable: potential
+CheckLinearSolverOptions: Setting > Linear System Direct Method < to:umfpack
+OptimizeBandwidth: ---------------------------------------------------------
+OptimizeBandwidth: Computing matrix structure for: electrostatics
+OptimizeBandwidth: Initial bandwidth for electrostatics: 7359
+OptimizeBandwidth: Optimized bandwidth for electrostatics: 824
+OptimizeBandwidth: ---------------------------------------------------------
+AddSolvers: Setting up solver 2: savedata
+AddEquationBasics: Using procedure: SaveData SaveScalars
+AddEquationBasics: Setting up solver: savedata
+Loading user function library: [SaveData]...[SaveScalars_Init]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars]
+AddTimeEtc: Setting time and other global variables
+MAIN: Random seed initialized to: 314159265
+SetInitialConditions: Setting up initial conditions (if any)
+MAIN: Number of timesteps to be saved: 1
+MAIN: 
+MAIN: -------------------------------------
+MAIN:  Steady state iteration:            1
+MAIN: -------------------------------------
+MAIN: 
+SingleSolver: Attempting to call solver: 1
+SingleSolver: Solver Equation string is: electrostatics
+StatElecSolver: -------------------------------------
+StatElecSolver: Electrostatics solver:
+StatElecSolver: -------------------------------------
+DefaultStart: Starting solver: electrostatics
+StatElecSolver: Starting Assembly...
+DefUtils::DefaultDirichletBCs: Setting Dirichlet boundary conditions
+EnforceDirichletConditions: Enforcing total of 1022 Dirichlet conditions.
+EnforceDirichletConditions: Applying Dirichlet conditions using scaled diagonal
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+EnforceDirichletConditions: Dirichlet conditions enforced for dofs: 1022
+StatElecSolver:  Assembly (s)          :  0.18931699999999999
+DefaultSolve: Solving linear system with default routines
+SolveSystem: Solving linear system
+SolveLinearSystem: Assuming real valued linear system
+SolveLinearSystem: Assuming serial linear system
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+SolveLinearSystem: Serial linear System Solver: direct
+DirectSolver: Using direct method: umfpack
+ComputeNorm: Computing norm of solution
+ComputeChange: NS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+StatElecSolver:  Solve (s)             :  0.43861600000000001
+StatElecSolver:  Tot. Electric Energy  :   510000.00000001019
+StatElecSolver:  Potential difference:    100.00000000000000
+StatElecSolver:  Capacitance           :   102.00000000000203
+StatElecSolver:  Result Norm   :    59.120393425816374
+StatElecSolver:  Relative Change :    2.0000000000000000
+DefaultFinish: Finished solver: electrostatics
+ComputeNorm: Computing norm of solution
+ComputeChange: SS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+SingleSolver: Attempting to call solver: 2
+SingleSolver: Solver Equation string is: savedata
+SaveScalars: -----------------------------------------
+SaveScalars: Saving scalar values of various kinds
+SolverOutputDirectory: Creating directory: iteration-results
+SaveScalars: Performed 0 reduction operations
+SaveScalars: Found 3 result scalars in simulation section
+SaveScalars: Found 3 values to save in total
+SaveScalars: Saving names of values to file: iteration-results/results.dat.names
+SaveScalars: Data is appended to existing file
+SaveScalars: Saving values to file: iteration-results/results.dat
+SaveScalars: -----------------------------------------
+ReloadInputFile: Reloading input file
+LoadInputFile: Loading input file:
+MAIN: Reporting unused list entries for sif improvement!
+MAIN: If you do not want these lines undefine > DEVEL_LISTUSAGE < !
+   Unused keywords:
+MAIN: *** Elmer Solver: ALL DONE ***
+MAIN: The end
+SOLVER TOTAL TIME(CPU,REAL):         0.92        1.17
+ELMER SOLVER FINISHED AT: 2026/01/25 18:38:46
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+END OF RUN 7
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+BEGINNING OF RUN 8
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+ELMER SOLVER (v 9.0) STARTED AT: 2026/01/25 18:38:46
+ParCommInit: Initialize #PEs: 1
+MAIN: 
+MAIN: =============================================================
+MAIN: ElmerSolver finite element software, Welcome!
+MAIN: This program is free software licensed under (L)GPL
+MAIN: Copyright 1st April 1995 - , CSC - IT Center for Science Ltd.
+MAIN: Webpage http://www.csc.fi/elmer, Email elmeradm@csc.fi
+MAIN: Version: 9.0 (Rev: 71f94d526, Compiled: 2026-01-15)
+MAIN:  Running one task without MPI parallelization.
+MAIN:  Running with just one thread per task.
+MAIN: =============================================================
+MAIN: 
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Reading Model: ./sif/iteration-case.sif
+LoadInputFile: Scanning input file: ./sif/iteration-case.sif
+LoadInputFile: Scanning only size info
+LoadInputFile: First time visiting
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Loading input file: ./sif/iteration-case.sif
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Number of BCs: 2
+LoadInputFile: Number of Body Forces: 0
+LoadInputFile: Number of Initial Conditions: 0
+LoadInputFile: Number of Materials: 1
+LoadInputFile: Number of Equations: 1
+LoadInputFile: Number of Solvers: 2
+LoadInputFile: Number of Bodies: 1
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+LoadMesh: Loading serial mesh!
+ElmerAsciiMesh: Performing step: 1
+ElmerAsciiMesh: Base mesh name: ./mesh
+ReadHeaderFile: Reading header info from file: ./mesh/mesh.header
+InitializeMesh: Number of nodes in mesh: 7418
+InitializeMesh: Number of bulk elements in mesh: 37138
+InitializeMesh: Number of boundary elements in mesh: 1880
+InitializeMesh: Initial number of max element nodes: 4
+ElmerAsciiMesh: Performing step: 2
+ReadNodesFile: Reading nodes from file: ./mesh/mesh.nodes
+SetMeshDimension: Dimension of mesh is: 3
+SetMeshDimension: Max dimension of mesh is: 3
+ElmerAsciiMesh: Performing step: 3
+ReadElementsFile: Reading bulk elements from file: ./mesh/mesh.elements
+ElmerAsciiMesh: Performing step: 4
+ReadBoundaryFile: Reading boundary elements from file: ./mesh/mesh.boundary
+PermuteNodeNumbering: Performing node mapping
+MapBodiesAndBCs: Remapping bodies
+MapBodiesAndBCs: Minimum initial body index: 1
+MapBodiesAndBCs: Maximum initial body index: 1
+MapBodiesAndBCs: Remapping boundaries
+MapBodiesAndBCs: Minimum initial boundary index: 2
+MapBodiesAndBCs: Maximum initial boundary index: 3
+ElmerAsciiMesh: Performing step: 5
+ElmerAsciiMesh: Performing step: 6
+LoadMesh: Loading mesh done
+LoadMesh: Preparing mesh done
+LoadMesh: Elapsed REAL time:     0.0349 (s)
+MeshStabParams: Computing stabilization parameters
+MeshStabParams: Elapsed REAL time:     0.0036 (s)
+MAIN: -------------------------------------
+AddMeshCoordinates: Setting mesh coordinates and time
+AddSolvers: Setting up 2 solvers
+AddSolvers: Setting up solver 1: electrostatics
+AddEquationBasics: Using procedure: StatElecSolve StatElecSolver
+AddEquationBasics: Setting up solver: electrostatics
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver]
+AddEquationBasics: Creating standard variable: potential
+CheckLinearSolverOptions: Setting > Linear System Direct Method < to:umfpack
+OptimizeBandwidth: ---------------------------------------------------------
+OptimizeBandwidth: Computing matrix structure for: electrostatics
+OptimizeBandwidth: Initial bandwidth for electrostatics: 7359
+OptimizeBandwidth: Optimized bandwidth for electrostatics: 824
+OptimizeBandwidth: ---------------------------------------------------------
+AddSolvers: Setting up solver 2: savedata
+AddEquationBasics: Using procedure: SaveData SaveScalars
+AddEquationBasics: Setting up solver: savedata
+Loading user function library: [SaveData]...[SaveScalars_Init]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars]
+AddTimeEtc: Setting time and other global variables
+MAIN: Random seed initialized to: 314159265
+SetInitialConditions: Setting up initial conditions (if any)
+MAIN: Number of timesteps to be saved: 1
+MAIN: 
+MAIN: -------------------------------------
+MAIN:  Steady state iteration:            1
+MAIN: -------------------------------------
+MAIN: 
+SingleSolver: Attempting to call solver: 1
+SingleSolver: Solver Equation string is: electrostatics
+StatElecSolver: -------------------------------------
+StatElecSolver: Electrostatics solver:
+StatElecSolver: -------------------------------------
+DefaultStart: Starting solver: electrostatics
+StatElecSolver: Starting Assembly...
+DefUtils::DefaultDirichletBCs: Setting Dirichlet boundary conditions
+EnforceDirichletConditions: Enforcing total of 1022 Dirichlet conditions.
+EnforceDirichletConditions: Applying Dirichlet conditions using scaled diagonal
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+EnforceDirichletConditions: Dirichlet conditions enforced for dofs: 1022
+StatElecSolver:  Assembly (s)          :  0.19969800000000001
+DefaultSolve: Solving linear system with default routines
+SolveSystem: Solving linear system
+SolveLinearSystem: Assuming real valued linear system
+SolveLinearSystem: Assuming serial linear system
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+SolveLinearSystem: Serial linear System Solver: direct
+DirectSolver: Using direct method: umfpack
+ComputeNorm: Computing norm of solution
+ComputeChange: NS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+StatElecSolver:  Solve (s)             :  0.49512000000000000
+StatElecSolver:  Tot. Electric Energy  :   609999.99999998172
+StatElecSolver:  Potential difference:    100.00000000000000
+StatElecSolver:  Capacitance           :   121.99999999999635
+StatElecSolver:  Result Norm   :    59.120393425816268
+StatElecSolver:  Relative Change :    2.0000000000000000
+DefaultFinish: Finished solver: electrostatics
+ComputeNorm: Computing norm of solution
+ComputeChange: SS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+SingleSolver: Attempting to call solver: 2
+SingleSolver: Solver Equation string is: savedata
+SaveScalars: -----------------------------------------
+SaveScalars: Saving scalar values of various kinds
+SolverOutputDirectory: Creating directory: iteration-results
+SaveScalars: Performed 0 reduction operations
+SaveScalars: Found 3 result scalars in simulation section
+SaveScalars: Found 3 values to save in total
+SaveScalars: Saving names of values to file: iteration-results/results.dat.names
+SaveScalars: Data is appended to existing file
+SaveScalars: Saving values to file: iteration-results/results.dat
+SaveScalars: -----------------------------------------
+ReloadInputFile: Reloading input file
+LoadInputFile: Loading input file:
+MAIN: Reporting unused list entries for sif improvement!
+MAIN: If you do not want these lines undefine > DEVEL_LISTUSAGE < !
+   Unused keywords:
+MAIN: *** Elmer Solver: ALL DONE ***
+MAIN: The end
+SOLVER TOTAL TIME(CPU,REAL):         1.00        1.23
+ELMER SOLVER FINISHED AT: 2026/01/25 18:38:47
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+END OF RUN 8
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+BEGINNING OF RUN 9
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+ELMER SOLVER (v 9.0) STARTED AT: 2026/01/25 18:38:47
+ParCommInit: Initialize #PEs: 1
+MAIN: 
+MAIN: =============================================================
+MAIN: ElmerSolver finite element software, Welcome!
+MAIN: This program is free software licensed under (L)GPL
+MAIN: Copyright 1st April 1995 - , CSC - IT Center for Science Ltd.
+MAIN: Webpage http://www.csc.fi/elmer, Email elmeradm@csc.fi
+MAIN: Version: 9.0 (Rev: 71f94d526, Compiled: 2026-01-15)
+MAIN:  Running one task without MPI parallelization.
+MAIN:  Running with just one thread per task.
+MAIN: =============================================================
+MAIN: 
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Reading Model: ./sif/iteration-case.sif
+LoadInputFile: Scanning input file: ./sif/iteration-case.sif
+LoadInputFile: Scanning only size info
+LoadInputFile: First time visiting
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Loading input file: ./sif/iteration-case.sif
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Number of BCs: 2
+LoadInputFile: Number of Body Forces: 0
+LoadInputFile: Number of Initial Conditions: 0
+LoadInputFile: Number of Materials: 1
+LoadInputFile: Number of Equations: 1
+LoadInputFile: Number of Solvers: 2
+LoadInputFile: Number of Bodies: 1
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+LoadMesh: Loading serial mesh!
+ElmerAsciiMesh: Performing step: 1
+ElmerAsciiMesh: Base mesh name: ./mesh
+ReadHeaderFile: Reading header info from file: ./mesh/mesh.header
+InitializeMesh: Number of nodes in mesh: 7418
+InitializeMesh: Number of bulk elements in mesh: 37138
+InitializeMesh: Number of boundary elements in mesh: 1880
+InitializeMesh: Initial number of max element nodes: 4
+ElmerAsciiMesh: Performing step: 2
+ReadNodesFile: Reading nodes from file: ./mesh/mesh.nodes
+SetMeshDimension: Dimension of mesh is: 3
+SetMeshDimension: Max dimension of mesh is: 3
+ElmerAsciiMesh: Performing step: 3
+ReadElementsFile: Reading bulk elements from file: ./mesh/mesh.elements
+ElmerAsciiMesh: Performing step: 4
+ReadBoundaryFile: Reading boundary elements from file: ./mesh/mesh.boundary
+PermuteNodeNumbering: Performing node mapping
+MapBodiesAndBCs: Remapping bodies
+MapBodiesAndBCs: Minimum initial body index: 1
+MapBodiesAndBCs: Maximum initial body index: 1
+MapBodiesAndBCs: Remapping boundaries
+MapBodiesAndBCs: Minimum initial boundary index: 2
+MapBodiesAndBCs: Maximum initial boundary index: 3
+ElmerAsciiMesh: Performing step: 5
+ElmerAsciiMesh: Performing step: 6
+LoadMesh: Loading mesh done
+LoadMesh: Preparing mesh done
+LoadMesh: Elapsed REAL time:     0.0335 (s)
+MeshStabParams: Computing stabilization parameters
+MeshStabParams: Elapsed REAL time:     0.0043 (s)
+MAIN: -------------------------------------
+AddMeshCoordinates: Setting mesh coordinates and time
+AddSolvers: Setting up 2 solvers
+AddSolvers: Setting up solver 1: electrostatics
+AddEquationBasics: Using procedure: StatElecSolve StatElecSolver
+AddEquationBasics: Setting up solver: electrostatics
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver]
+AddEquationBasics: Creating standard variable: potential
+CheckLinearSolverOptions: Setting > Linear System Direct Method < to:umfpack
+OptimizeBandwidth: ---------------------------------------------------------
+OptimizeBandwidth: Computing matrix structure for: electrostatics
+OptimizeBandwidth: Initial bandwidth for electrostatics: 7359
+OptimizeBandwidth: Optimized bandwidth for electrostatics: 824
+OptimizeBandwidth: ---------------------------------------------------------
+AddSolvers: Setting up solver 2: savedata
+AddEquationBasics: Using procedure: SaveData SaveScalars
+AddEquationBasics: Setting up solver: savedata
+Loading user function library: [SaveData]...[SaveScalars_Init]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars]
+AddTimeEtc: Setting time and other global variables
+MAIN: Random seed initialized to: 314159265
+SetInitialConditions: Setting up initial conditions (if any)
+MAIN: Number of timesteps to be saved: 1
+MAIN: 
+MAIN: -------------------------------------
+MAIN:  Steady state iteration:            1
+MAIN: -------------------------------------
+MAIN: 
+SingleSolver: Attempting to call solver: 1
+SingleSolver: Solver Equation string is: electrostatics
+StatElecSolver: -------------------------------------
+StatElecSolver: Electrostatics solver:
+StatElecSolver: -------------------------------------
+DefaultStart: Starting solver: electrostatics
+StatElecSolver: Starting Assembly...
+DefUtils::DefaultDirichletBCs: Setting Dirichlet boundary conditions
+EnforceDirichletConditions: Enforcing total of 1022 Dirichlet conditions.
+EnforceDirichletConditions: Applying Dirichlet conditions using scaled diagonal
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+EnforceDirichletConditions: Dirichlet conditions enforced for dofs: 1022
+StatElecSolver:  Assembly (s)          :  0.18679399999999999
+DefaultSolve: Solving linear system with default routines
+SolveSystem: Solving linear system
+SolveLinearSystem: Assuming real valued linear system
+SolveLinearSystem: Assuming serial linear system
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+SolveLinearSystem: Serial linear System Solver: direct
+DirectSolver: Using direct method: umfpack
+ComputeNorm: Computing norm of solution
+ComputeChange: NS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+StatElecSolver:  Solve (s)             :  0.49780299999999994
+StatElecSolver:  Tot. Electric Energy  :   709999.99999998626
+StatElecSolver:  Potential difference:    100.00000000000000
+StatElecSolver:  Capacitance           :   141.99999999999724
+StatElecSolver:  Result Norm   :    59.120393425816374
+StatElecSolver:  Relative Change :    2.0000000000000000
+DefaultFinish: Finished solver: electrostatics
+ComputeNorm: Computing norm of solution
+ComputeChange: SS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+SingleSolver: Attempting to call solver: 2
+SingleSolver: Solver Equation string is: savedata
+SaveScalars: -----------------------------------------
+SaveScalars: Saving scalar values of various kinds
+SolverOutputDirectory: Creating directory: iteration-results
+SaveScalars: Performed 0 reduction operations
+SaveScalars: Found 3 result scalars in simulation section
+SaveScalars: Found 3 values to save in total
+SaveScalars: Saving names of values to file: iteration-results/results.dat.names
+SaveScalars: Data is appended to existing file
+SaveScalars: Saving values to file: iteration-results/results.dat
+SaveScalars: -----------------------------------------
+ReloadInputFile: Reloading input file
+LoadInputFile: Loading input file:
+MAIN: Reporting unused list entries for sif improvement!
+MAIN: If you do not want these lines undefine > DEVEL_LISTUSAGE < !
+   Unused keywords:
+MAIN: *** Elmer Solver: ALL DONE ***
+MAIN: The end
+SOLVER TOTAL TIME(CPU,REAL):         0.97        1.25
+ELMER SOLVER FINISHED AT: 2026/01/25 18:38:48
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+END OF RUN 9
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+BEGINNING OF RUN 10
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+
+ELMER SOLVER (v 9.0) STARTED AT: 2026/01/25 18:38:48
+ParCommInit: Initialize #PEs: 1
+MAIN: 
+MAIN: =============================================================
+MAIN: ElmerSolver finite element software, Welcome!
+MAIN: This program is free software licensed under (L)GPL
+MAIN: Copyright 1st April 1995 - , CSC - IT Center for Science Ltd.
+MAIN: Webpage http://www.csc.fi/elmer, Email elmeradm@csc.fi
+MAIN: Version: 9.0 (Rev: 71f94d526, Compiled: 2026-01-15)
+MAIN:  Running one task without MPI parallelization.
+MAIN:  Running with just one thread per task.
+MAIN: =============================================================
+MAIN: 
+MAIN: 
+MAIN: -------------------------------------
+MAIN: Reading Model: ./sif/iteration-case.sif
+LoadInputFile: Scanning input file: ./sif/iteration-case.sif
+LoadInputFile: Scanning only size info
+LoadInputFile: First time visiting
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Loading input file: ./sif/iteration-case.sif
+LoadInputFile: Reading base load of sif file
+LoadInputFile: Number of BCs: 2
+LoadInputFile: Number of Body Forces: 0
+LoadInputFile: Number of Initial Conditions: 0
+LoadInputFile: Number of Materials: 1
+LoadInputFile: Number of Equations: 1
+LoadInputFile: Number of Solvers: 2
+LoadInputFile: Number of Bodies: 1
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+Loading user function library: [SaveData]...[SaveScalars_Init0]
+LoadMesh: Loading serial mesh!
+ElmerAsciiMesh: Performing step: 1
+ElmerAsciiMesh: Base mesh name: ./mesh
+ReadHeaderFile: Reading header info from file: ./mesh/mesh.header
+InitializeMesh: Number of nodes in mesh: 7418
+InitializeMesh: Number of bulk elements in mesh: 37138
+InitializeMesh: Number of boundary elements in mesh: 1880
+InitializeMesh: Initial number of max element nodes: 4
+ElmerAsciiMesh: Performing step: 2
+ReadNodesFile: Reading nodes from file: ./mesh/mesh.nodes
+SetMeshDimension: Dimension of mesh is: 3
+SetMeshDimension: Max dimension of mesh is: 3
+ElmerAsciiMesh: Performing step: 3
+ReadElementsFile: Reading bulk elements from file: ./mesh/mesh.elements
+ElmerAsciiMesh: Performing step: 4
+ReadBoundaryFile: Reading boundary elements from file: ./mesh/mesh.boundary
+PermuteNodeNumbering: Performing node mapping
+MapBodiesAndBCs: Remapping bodies
+MapBodiesAndBCs: Minimum initial body index: 1
+MapBodiesAndBCs: Maximum initial body index: 1
+MapBodiesAndBCs: Remapping boundaries
+MapBodiesAndBCs: Minimum initial boundary index: 2
+MapBodiesAndBCs: Maximum initial boundary index: 3
+ElmerAsciiMesh: Performing step: 5
+ElmerAsciiMesh: Performing step: 6
+LoadMesh: Loading mesh done
+LoadMesh: Preparing mesh done
+LoadMesh: Elapsed REAL time:     0.0365 (s)
+MeshStabParams: Computing stabilization parameters
+MeshStabParams: Elapsed REAL time:     0.0038 (s)
+MAIN: -------------------------------------
+AddMeshCoordinates: Setting mesh coordinates and time
+AddSolvers: Setting up 2 solvers
+AddSolvers: Setting up solver 1: electrostatics
+AddEquationBasics: Using procedure: StatElecSolve StatElecSolver
+AddEquationBasics: Setting up solver: electrostatics
+Loading user function library: [StatElecSolve]...[StatElecSolver_Init]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver_bulk]
+Loading user function library: [StatElecSolve]...[StatElecSolver]
+AddEquationBasics: Creating standard variable: potential
+CheckLinearSolverOptions: Setting > Linear System Direct Method < to:umfpack
+OptimizeBandwidth: ---------------------------------------------------------
+OptimizeBandwidth: Computing matrix structure for: electrostatics
+OptimizeBandwidth: Initial bandwidth for electrostatics: 7359
+OptimizeBandwidth: Optimized bandwidth for electrostatics: 824
+OptimizeBandwidth: ---------------------------------------------------------
+AddSolvers: Setting up solver 2: savedata
+AddEquationBasics: Using procedure: SaveData SaveScalars
+AddEquationBasics: Setting up solver: savedata
+Loading user function library: [SaveData]...[SaveScalars_Init]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars_bulk]
+Loading user function library: [SaveData]...[SaveScalars]
+AddTimeEtc: Setting time and other global variables
+MAIN: Random seed initialized to: 314159265
+SetInitialConditions: Setting up initial conditions (if any)
+MAIN: Number of timesteps to be saved: 1
+MAIN: 
+MAIN: -------------------------------------
+MAIN:  Steady state iteration:            1
+MAIN: -------------------------------------
+MAIN: 
+SingleSolver: Attempting to call solver: 1
+SingleSolver: Solver Equation string is: electrostatics
+StatElecSolver: -------------------------------------
+StatElecSolver: Electrostatics solver:
+StatElecSolver: -------------------------------------
+DefaultStart: Starting solver: electrostatics
+StatElecSolver: Starting Assembly...
+DefUtils::DefaultDirichletBCs: Setting Dirichlet boundary conditions
+EnforceDirichletConditions: Enforcing total of 1022 Dirichlet conditions.
+EnforceDirichletConditions: Applying Dirichlet conditions using scaled diagonal
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+EnforceDirichletConditions: Dirichlet conditions enforced for dofs: 1022
+StatElecSolver:  Assembly (s)          :  0.20504499999999998
+DefaultSolve: Solving linear system with default routines
+SolveSystem: Solving linear system
+SolveLinearSystem: Assuming real valued linear system
+SolveLinearSystem: Assuming serial linear system
+ScaleLinearSystem: Creating > DiagScaling < vector of size 7418
+SolveLinearSystem: Serial linear System Solver: direct
+DirectSolver: Using direct method: umfpack
+ComputeNorm: Computing norm of solution
+ComputeChange: NS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+StatElecSolver:  Solve (s)             :  0.45638199999999995
+StatElecSolver:  Tot. Electric Energy  :   810000.00000000105
+StatElecSolver:  Potential difference:    100.00000000000000
+StatElecSolver:  Capacitance           :   162.00000000000020
+StatElecSolver:  Result Norm   :    59.120393425816296
+StatElecSolver:  Relative Change :    2.0000000000000000
+DefaultFinish: Finished solver: electrostatics
+ComputeNorm: Computing norm of solution
+ComputeChange: SS (ITER=1) (NRM,RELC): (  59.120393      2.0000000     ) :: electrostatics
+SingleSolver: Attempting to call solver: 2
+SingleSolver: Solver Equation string is: savedata
+SaveScalars: -----------------------------------------
+SaveScalars: Saving scalar values of various kinds
+SolverOutputDirectory: Creating directory: iteration-results
+SaveScalars: Performed 0 reduction operations
+SaveScalars: Found 3 result scalars in simulation section
+SaveScalars: Found 3 values to save in total
+SaveScalars: Saving names of values to file: iteration-results/results.dat.names
+SaveScalars: Data is appended to existing file
+SaveScalars: Saving values to file: iteration-results/results.dat
+SaveScalars: -----------------------------------------
+ReloadInputFile: Reloading input file
+LoadInputFile: Loading input file:
+MAIN: Reporting unused list entries for sif improvement!
+MAIN: If you do not want these lines undefine > DEVEL_LISTUSAGE < !
+   Unused keywords:
+MAIN: *** Elmer Solver: ALL DONE ***
+MAIN: The end
+SOLVER TOTAL TIME(CPU,REAL):         0.94        1.19
+ELMER SOLVER FINISHED AT: 2026/01/25 18:38:49
+
+
+<><><><><><><><><><><><><><><><><><><><><><><>
+END OF RUN 10
+<><><><><><><><><><><><><><><><><><><><><><><>
+
+

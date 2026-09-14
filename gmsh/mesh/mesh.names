@@ -1,0 +1,9 @@
+! ----- names for bodies -----
+$ Cage = 1
+$ AirInside = 2
+$ AirOutside = 3
+! ----- names for boundaries -----
+$ Positive = 4
+$ Negative = 5
+$ NofluxBoundaries = 6
+$ FloatingPotentialBoundaries = 7

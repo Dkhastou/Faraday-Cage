@@ -1,0 +1,30 @@
+!------ Skeleton for body section -----
+Body 1
+  Name = Cage
+End
+
+Body 2
+  Name = AirInside
+End
+
+Body 3
+  Name = AirOutside
+End
+
+!------ Skeleton for boundary section -----
+Boundary Condition 1
+  Name = Positive
+End
+
+Boundary Condition 2
+  Name = Negative
+End
+
+Boundary Condition 3
+  Name = NofluxBoundaries
+End
+
+Boundary Condition 4
+  Name = FloatingPotentialBoundaries
+End
+

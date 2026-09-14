@@ -1,0 +1,98 @@
+Header
+    CHECK KEYWORDS Warn
+    ! Mesh DB "." "mesh"
+    Mesh DB "./gmsh/mesh"
+    Results Directory "results/results-vtu"
+End
+
+Simulation
+    Coordinate System = Cartesian
+    Simulation Type = SteadyState
+
+    ! USE THIS FOR iterative simulation type instead of SteadyState
+    ! Timestep Sizes = 0.01
+    ! Timestep Intervals = 10
+
+    ! Steady State Max Iterations = 1
+
+    Timestepping Method = implicit Euler
+    Post File = "case.vtu"
+End
+
+Equation 1
+    Name = "EM Equation"
+    Active Solvers(1) = 1 
+End
+
+Solver 1
+  Equation = Electrostatics
+  Procedure = "StatElecSolve" "statelecsolver_edge_residual"
+  ! Variable = Potential indicates the variable the solver is solving for 
+  Variable = Potential
+  Calculate Electric Field = True
+  Calculate Electric Energy = True
+  Linear System Solver = direct 
+  Calculate Electric Charge = Logical True
+
+  ! DOF = Degree of freedom. You must explicitly declare how many degrees of freedom there are
+  ! One degree of freedom is for a scalar
+  ! 2 or more degrees of freedom are for vectors
+  ! Because potential is a scalar, we set DOFS equal to 1
+  Variable DOFS = 1
+End
+
+! Air Material
+Material 1
+  Relative Permittivity = 1.0       ! Relative permittivity of air is 1
+End
+
+! ! Cage Material
+! Material 2
+!     Relative Permittivity = 1.0     ! Assigned from Hayden
+!     Conductivity = 59600000.0       ! 5.96e7
+! End
+
+
+! Air Body. We define both the air inside and outside the cage
+Body 1
+    Target Bodies(2) = 2 3
+    Equation = 1
+    Material = 1
+End
+
+! ! Cage Body
+! Body 2
+!     Target Bodies(1) = 5
+!     Equation = 1
+!     Material = 2
+!     ! Initial Condition must be declared here
+!     ! Initial Condition = 1
+! End
+
+! TOTAL VOLTAGE:
+! 2,000,000 V/m * 0.3 m = 600,000 V
+
+! Positive BC
+Boundary Condition 1
+    Target Boundaries(1) = 4
+    Potential = 300000
+End
+
+! Negative BC
+Boundary Condition 2
+    Target Boundaries(1) = 5
+    Potential = -300000
+End
+
+! Non interacting BC
+Boundary Condition 4
+    Target Boundaries(1) = 6
+    Electric Flux = 0
+End
+
+! Cage BC
+Boundary Condition 3
+    Target Boundaries(1) = 7
+    ! Potential = 0
+End 
+

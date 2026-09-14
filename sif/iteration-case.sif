@@ -1,0 +1,77 @@
+Header
+    CHECK KEYWORDS Warn
+    Mesh DB "." "mesh"
+    ! Mesh DB "../mesh"
+    Results Directory "iteration-results"
+End
+
+! non string arguments can be given with or without caps. I.E. direct or Direct. There is no difference
+
+Simulation
+    Coordinate System = Cartesian
+
+    ! Using steady state for iteration
+    Simulation Type = SteadyState
+    Steady State Max Iterations = 1
+    Timestepping Method = implicit Euler
+
+    ! This will return a file that Elmer uses to read the data. It should usually be a .vtu or .vtk. 
+    ! If I use another file type it will just print out a log of the data in a format that I would 
+    ! need to filter through later
+    ! Post File = "case.txt"
+End
+
+! The 'Name' keyword is for the user, and it can be set to anything. 
+! Elmer does not interpret this
+
+Equation 1
+    Name = "EM Equation"
+    Active Solvers(1) = 1 
+End
+
+Solver 1
+  Equation = Electrostatics
+  Procedure = "StatElecSolve" "StatElecSolver"
+  Variable = Potential
+  Calculate Electric Field = True
+  Calculate Electric Energy = True
+  Linear System Solver = direct 
+End
+
+! Use Solver to save data 
+
+Solver 2
+  Equation = "SaveData"
+  Procedure = "SaveData" "SaveScalars"  ! Replace "SaveScalars" with "SaveLine" or "SaveGridData"
+  Exec Solver = After All
+  Filename = "results.dat"
+  File Append = Logical True
+End
+
+Material 1
+  Relative Permittivity = 91! In what Units??????
+End
+
+Body 1
+    Target Bodies(1) = 1
+    ! Target Bodies uses the physical groups volume defined in gmsh
+    Equation = 1
+    Material = 1
+    ! Initial Condition must be declared here
+    ! Initial Condition = 1
+End
+
+Boundary Condition 1
+    Target Boundaries(1) = 2
+    Potential = 100.0
+    ! Temperature = 200 * Time / 1.0  ! linearly ramp from 0 → 200 over 1 second
+    ! Key Word Potential instead of Temperature would be defined for other solver types 
+End
+
+! the (1) after Target Boundaries tells Elmer how many boundaries there are
+! for example, Target Boundaries(2) = 2 3 or TargetBoundaries(3) = 2 3 4
+
+Boundary Condition 2
+    Target Boundaries(1) = 3
+    Potential = 0.0
+End
