@@ -26,7 +26,7 @@ End
 
 Solver 1
   Equation = Electrostatics
-  Procedure = "StatElecSolve" "statelecsolver_edge_residual"
+  Procedure = "StatElecSolve" "StatElecSolver"
   ! Variable = Potential indicates the variable the solver is solving for 
   Variable = Potential
   Calculate Electric Field = True
