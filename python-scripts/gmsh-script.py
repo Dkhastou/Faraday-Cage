@@ -31,7 +31,7 @@ def importModel():
     gmsh.model.add("Faraday_Cage")
 
     # Import CAD
-    gmsh.model.occ.importShapes("/home/dkhas/elmer-projects/faraday-cage-1/gmsh/Faraday_Cage_2.step")
+    gmsh.model.occ.importShapes("../meshing/Faraday_Cage_2.step")
 
     # Synchronize OCC → model
     gmsh.model.occ.synchronize()
@@ -131,7 +131,7 @@ def createMesh():
     gmsh.model.mesh.generate(3)
 
     # Write mesh (This automatically exports it too)
-    gmsh.write("/home/dkhas/elmer-projects/faraday-cage-2/gmsh/mesh.msh")
+    gmsh.write("../meshing/mesh.msh")
 
 # Physical groups must be defined before meshing, because physical groups belong to the model, not the mesh.
 # The mesh is generated from the model

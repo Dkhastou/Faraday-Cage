@@ -1,7 +1,7 @@
 Header
     CHECK KEYWORDS Warn
     ! Mesh DB "." "mesh"
-    Mesh DB "./gmsh/mesh"
+    Mesh DB "./meshing/mesh"
     Results Directory "results/results-vtu"
 End
 
