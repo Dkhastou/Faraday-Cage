@@ -26,7 +26,7 @@ def addPhysicalGroup(dimension, entity_tags, physical_group_name, list):
 def importModel():
 
     # This command opens a preexisting mesh to edit
-    # gmsh.open("/home/dkhas/elmer-projects/faraday-cage-1/gmsh/mesh.msh")
+    # gmsh.open("./meshing/mesh.msh")
 
     gmsh.model.add("Faraday_Cage")
 
