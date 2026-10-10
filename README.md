@@ -41,7 +41,7 @@ Here it is easy to see that the electric field outside the Faraday cage is non z
 2. The results folder contains a .vtu file which can be opened up in ParaView, as well as some.pvsm files which can be opened in ParaView to quickly view the end result visuals that are shown above
 3. There is an output.log file, which is used primarily for troubleshooting
 4. The sif directory contains the case.sif file ElmerSolver will use to run the simulation. It also contains a sif-notes.md file, which is mostly for myself to document any important information I needed while learning how to write using the .sif language. It also contains a template.sif file which is copied from template projects I created throughout the learning process.
-5. I wrote some python scripts to try and automate storing the simulation results in a .db file using SQL. Much of this is unfinished and quite messy, and I will be updating the project further to clean up these files. Currently, all of this scripting is stored in its seperate directory called 'script-stuff'
+5. I wrote some python scripts to try and automate storing the simulation results in a .db file using SQL. Much of this is unfinished and quite messy. Currently this is not included in the project. I may update the project in the future to add these files back in. 
 
 ### Workflow
 
